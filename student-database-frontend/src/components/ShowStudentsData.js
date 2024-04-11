@@ -21,6 +21,7 @@ const ShowStudentsData = () => {
   };
 
   const handleDelete = (enrollment_number) => {
+    console.log(enrollment_number)
     fetch(`http://localhost:5000/students/${enrollment_number}`, {
       method: 'DELETE'
     })
@@ -65,7 +66,7 @@ const ShowStudentsData = () => {
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.branch}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.semester}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>
-                <DeleteButton onClick={() => handleDelete(student.enrollmentNumber)} />
+                <DeleteButton onClick={() => handleDelete(student.enrollment_number)} />
               </td>
             </tr>
           ))}
